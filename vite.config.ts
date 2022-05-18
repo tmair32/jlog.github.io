@@ -1,8 +1,10 @@
 import { defineConfig } from "vite";
+import eslintPlugin from "vite-plugin-eslint";
 import vue from "@vitejs/plugin-vue";
 
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
+import Markdown from "vite-plugin-md";
 import WindiCSS from "vite-plugin-windicss";
 
 import { resolve } from "path";
@@ -12,6 +14,11 @@ import Pages from "vite-plugin-pages";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      "~/": `${resolve(__dirname, "src")}/`,
+    },
+  },
   plugins: [
     AutoImport({
       imports: ["vue", "@vueuse/core", "@vueuse/head"],
@@ -21,6 +28,17 @@ export default defineConfig({
       extensions: ["vue", "md"],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: true,
+    }),
+    eslintPlugin(),
+    Markdown({
+      headEnabled: true,
+      wrapperComponent: "post",
+      markdownItOptions: {
+        html: true,
+        linkify: true,
+        typographer: true,
+      },
+      wrapperClasses: "article-body mb-5",
     }),
     Pages({
       pagesDir: [
