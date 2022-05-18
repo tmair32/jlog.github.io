@@ -9,6 +9,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@vueuse/core": "^8.5.0",
+    "@vueuse/head": "^0.7.6",
     "vue": "^3.2.25"
   },
   "devDependencies": {
