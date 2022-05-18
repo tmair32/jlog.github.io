@@ -12,9 +12,11 @@
   "dependencies": {
     "@vueuse/core": "^8.5.0",
     "@vueuse/head": "^0.7.6",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.15"
   },
   "devDependencies": {
+    "@types/markdown-it": "^12.2.3",
     "@types/node": "^17.0.34",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
@@ -28,6 +30,11 @@
     "gray-matter": "^4.0.3",
     "husky": ">=7",
     "lint-staged": ">=10",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.4",
+    "markdown-it-link-attributes": "^4.0.0",
+    "markdown-it-prism": "^2.2.4",
+    "markdown-it-table-of-contents": "^0.6.0",
     "marzipano": "^0.10.2",
     "prettier": "^2.6.2",
     "typescript": "^4.5.4",

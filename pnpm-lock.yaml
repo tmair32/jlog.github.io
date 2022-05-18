@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/markdown-it': ^12.2.3
   '@types/node': ^17.0.34
   '@typescript-eslint/eslint-plugin': ^5.25.0
   '@typescript-eslint/parser': ^5.25.0
@@ -16,6 +17,11 @@ specifiers:
   gray-matter: ^4.0.3
   husky: '>=7'
   lint-staged: '>=10'
+  markdown-it: ^13.0.1
+  markdown-it-anchor: ^8.6.4
+  markdown-it-link-attributes: ^4.0.0
+  markdown-it-prism: ^2.2.4
+  markdown-it-table-of-contents: ^0.6.0
   marzipano: ^0.10.2
   prettier: ^2.6.2
   typescript: ^4.5.4
@@ -27,6 +33,7 @@ specifiers:
   vite-plugin-pages: ^0.23.0
   vite-plugin-windicss: ^1.8.4
   vue: ^3.2.25
+  vue-router: ^4.0.15
   vue-tsc: ^0.34.7
   windicss: ^3.5.3
 
@@ -34,8 +41,10 @@ dependencies:
   '@vueuse/core': 8.5.0_vue@3.2.33
   '@vueuse/head': 0.7.6_vue@3.2.33
   vue: 3.2.33
+  vue-router: 4.0.15_vue@3.2.33
 
 devDependencies:
+  '@types/markdown-it': 12.2.3
   '@types/node': 17.0.34
   '@typescript-eslint/eslint-plugin': 5.25.0_83b4734ba99fefa06dfff9f51a4c4301
   '@typescript-eslint/parser': 5.25.0_eslint@8.15.0+typescript@4.6.4
@@ -49,6 +58,11 @@ devDependencies:
   gray-matter: 4.0.3
   husky: 8.0.1
   lint-staged: 12.4.1
+  markdown-it: 13.0.1
+  markdown-it-anchor: 8.6.4_203ea4fed94a963ea5da6bb0985d1ff7
+  markdown-it-link-attributes: 4.0.0
+  markdown-it-prism: 2.2.4
+  markdown-it-table-of-contents: 0.6.0
   marzipano: 0.10.2
   prettier: 2.6.2
   typescript: 4.6.4
@@ -367,6 +381,10 @@ packages:
     dependencies:
       '@vue/compiler-dom': 3.2.33
       '@vue/shared': 3.2.33
+
+  /@vue/devtools-api/6.1.4:
+    resolution: {integrity: sha512-IiA0SvDrJEgXvVxjNkHPFfDx6SXw0b/TUkqMcDZWNg9fnCAHbTpoo59YfJ9QLFkwa3raau5vSlRVzMSLDnfdtQ==}
+    dev: false
 
   /@vue/eslint-config-typescript/10.0.0_7f105dc3ebd31cec885fdbbd30d5cc4c:
     resolution: {integrity: sha512-F94cL8ug3FaYXlCfU5/wiGjk1qeadmoBpRGAOBq+qre3Smdupa59dd6ZJrsfRODpsMPyTG7330juMDsUvpZ3Rw==}
@@ -1884,6 +1902,32 @@ packages:
       sourcemap-codec: 1.4.8
     dev: true
 
+  /markdown-it-anchor/8.6.4_203ea4fed94a963ea5da6bb0985d1ff7:
+    resolution: {integrity: sha512-Ul4YVYZNxMJYALpKtu+ZRdrryYt/GlQ5CK+4l1bp/gWXOG2QWElt6AqF3Mih/wfUKdZbNAZVXGR73/n6U/8img==}
+    peerDependencies:
+      '@types/markdown-it': '*'
+      markdown-it: '*'
+    dependencies:
+      '@types/markdown-it': 12.2.3
+      markdown-it: 13.0.1
+    dev: true
+
+  /markdown-it-link-attributes/4.0.0:
+    resolution: {integrity: sha512-ssjxSLlLfQBkX6BvAx1rCPrx7ZoK91llQQvS3P7KXvlbnVD34OUkfXwWecN7su/7mrI/HOW0RI5szdJOIqYC3w==}
+    dev: true
+
+  /markdown-it-prism/2.2.4:
+    resolution: {integrity: sha512-7oQVppKjiZqVQo7s7eLTIs3o/0hdvqAWDW8lvRel6eUCGD4iXjKbSZjvdHZFA2ZnCkQUF47kbvtWZDVQrv7zyQ==}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      prismjs: 1.28.0
+    dev: true
+
+  /markdown-it-table-of-contents/0.6.0:
+    resolution: {integrity: sha512-jHvEjZVEibyW97zEYg19mZCIXO16lHbvRaPDkEuOfMPBmzlI7cYczMZLMfUvwkhdOVQpIxu3gx6mgaw46KsNsQ==}
+    engines: {node: '>6.4.0'}
+    dev: true
+
   /markdown-it/13.0.1:
     resolution: {integrity: sha512-lTlxriVoy2criHP0JKRhO2VDG9c2ypWCsT237eDiLqi09rmbKoUetyGHq2uOIRoRS//kfoJckS0eUzzkDR+k2Q==}
     hasBin: true
@@ -2109,6 +2153,11 @@ packages:
     resolution: {integrity: sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==}
     engines: {node: '>=10.13.0'}
     hasBin: true
+    dev: true
+
+  /prismjs/1.28.0:
+    resolution: {integrity: sha512-8aaXdYvl1F7iC7Xm1spqSaY/OJBpYW3v+KJ+F17iYxvdc8sfjW194COK5wVhMZX45tGteiBQgdvD/nhxcRwylw==}
+    engines: {node: '>=6'}
     dev: true
 
   /punycode/2.1.1:
@@ -2649,6 +2698,15 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /vue-router/4.0.15_vue@3.2.33:
+    resolution: {integrity: sha512-xa+pIN9ZqORdIW1MkN2+d9Ui2pCM1b/UMgwYUCZOiFYHAvz/slKKBDha8DLrh5aCG/RibtrpyhKjKOZ85tYyWg==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.1.4
+      vue: 3.2.33
+    dev: false
 
   /vue-tsc/0.34.15_typescript@4.6.4:
     resolution: {integrity: sha512-xRNaOpg/UCHnRcz9vOdbIjB7uCQ0mifHpqNaejAho7em4WLOzNdJx4R9HMJrqWek44keg7AblIiwM+86QfXx9g==}

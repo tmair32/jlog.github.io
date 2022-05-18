@@ -12,6 +12,11 @@ import { readFileSync } from "fs";
 import matter from "gray-matter";
 import Pages from "vite-plugin-pages";
 
+import anchor from "markdown-it-anchor";
+import attr from "markdown-it-link-attributes";
+import Prism from "markdown-it-prism";
+import toc from "markdown-it-table-of-contents";
+
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
@@ -39,6 +44,23 @@ export default defineConfig({
         typographer: true,
       },
       wrapperClasses: "article-body mb-5",
+      markdownItSetup(md) {
+        md.use(Prism);
+        md.use(anchor, {
+          permalink: true,
+          permalinkBefore: true,
+          permalinkSymbol: "#",
+          permalinkAttrs: () => ({ "aria-hidden": true }),
+        }),
+          md.use(attr, {
+            pattern: /^https?:/,
+            attrs: {
+              target: "_blank",
+              rel: "noopener",
+            },
+          }),
+          md.use(toc);
+      },
     }),
     Pages({
       pagesDir: [
