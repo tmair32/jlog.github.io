@@ -19,10 +19,19 @@ import toc from "markdown-it-table-of-contents";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  mode: process.env.MODE || process.env.NODE_ENV || "development",
+  server: {
+    fs: {
+      allow: [".."],
+    },
+  },
   resolve: {
     alias: {
       "~/": `${resolve(__dirname, "src")}/`,
     },
+  },
+  define: {
+    "process.env": process.env,
   },
   plugins: [
     AutoImport({
@@ -88,4 +97,7 @@ export default defineConfig({
     vue(),
     WindiCSS(),
   ],
+  optimizeDeps: {
+    include: ["vue", "vue-router", "@vueuse/core"],
+  },
 });

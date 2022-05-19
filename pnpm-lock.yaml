@@ -9,6 +9,7 @@ specifiers:
   '@vue/eslint-config-typescript': ^10.0.0
   '@vueuse/core': ^8.5.0
   '@vueuse/head': ^0.7.6
+  cross-env: ^7.0.3
   eslint: ^8.15.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-html: ^6.2.0
@@ -23,6 +24,7 @@ specifiers:
   markdown-it-prism: ^2.2.4
   markdown-it-table-of-contents: ^0.6.0
   marzipano: ^0.10.2
+  pinia: ^2.0.14
   prettier: ^2.6.2
   prism-theme-vars: ^0.2.2
   prismjs: ^1.28.0
@@ -45,6 +47,7 @@ specifiers:
 dependencies:
   '@vueuse/core': 8.5.0_vue@3.2.33
   '@vueuse/head': 0.7.6_vue@3.2.33
+  pinia: 2.0.14_typescript@4.6.4+vue@3.2.33
   prism-theme-vars: 0.2.2
   vue: 3.2.33
   vue-router: 4.0.15_vue@3.2.33
@@ -56,6 +59,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.25.0_eslint@8.15.0+typescript@4.6.4
   '@vitejs/plugin-vue': 2.3.3_vite@2.9.9+vue@3.2.33
   '@vue/eslint-config-typescript': 10.0.0_7f105dc3ebd31cec885fdbbd30d5cc4c
+  cross-env: 7.0.3
   eslint: 8.15.0
   eslint-config-prettier: 8.5.0_eslint@8.15.0
   eslint-plugin-html: 6.2.0
@@ -814,6 +818,14 @@ packages:
 
   /concat-map/0.0.1:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
+    dev: true
+
+  /cross-env/7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
     dev: true
 
   /cross-spawn/7.0.3:
@@ -2499,6 +2511,24 @@ packages:
     engines: {node: '>=0.10'}
     hasBin: true
     dev: true
+
+  /pinia/2.0.14_typescript@4.6.4+vue@3.2.33:
+    resolution: {integrity: sha512-0nPuZR4TetT/WcLN+feMSjWJku3SQU7dBbXC6uw+R6FLQJCsg+/0pzXyD82T1FmAYe0lsx+jnEDQ1BLgkRKlxA==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.1.4
+      typescript: 4.6.4
+      vue: 3.2.33
+      vue-demi: 0.12.5_vue@3.2.33
+    dev: false
 
   /postcss-selector-parser/6.0.10:
     resolution: {integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==}
