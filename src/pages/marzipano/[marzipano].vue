@@ -31,8 +31,33 @@ onMounted(() => {
   }
   const geometry = new marzipano.CubeGeometry(levels);
 
+  // Create Initial View
+  const initialView = ref({
+    yaw: 0,
+    pitch: 0,
+    fov: (52 * Math.PI) / 180,
+  });
+
+  // Create Limiter
+  const limitResolution = marzipano.RectilinearView.limit.resolution(2048);
+  const limitYaw = marzipano.RectilinearView.limit.yaw(
+    -Math.PI / 2,
+    Math.PI / 2
+  );
+  const limitPitch = marzipano.RectilinearView.limit.pitch(0, 0);
+  const limitVFov = marzipano.RectilinearView.limit.vfov(
+    0,
+    (75 * Math.PI) / 180
+  );
+  const limiter = marzipano.util.compose(
+    limitResolution,
+    limitYaw,
+    limitPitch,
+    limitVFov
+  );
+
   // Create View
-  const view = new marzipano.RectilinearView();
+  const view = new marzipano.RectilinearView(initialView, limiter);
 
   // Create Scene
   const scene = viewer.createScene({
