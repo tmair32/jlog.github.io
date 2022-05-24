@@ -15,6 +15,12 @@
     "allowSyntheticDefaultImports": true,
     "types": ["vite-plugin-pages/client"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/utils/SolidColorSource.js"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/utils/SolidColorSource.js"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

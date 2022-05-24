@@ -10,9 +10,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  @apply w-screen h-screen;
+  font-size: 62.5%;
+  @apply w-screen h-screen overflow-hidden;
 }
 </style>

@@ -2,6 +2,7 @@ import { ViteSSG } from "vite-ssg";
 import App from "./App.vue";
 import marzipano from "marzipano";
 import routes from "virtual:generated-pages";
+import anime from "animejs/lib/anime.es.js";
 import { createPinia } from "pinia";
 import { RouterScrollBehavior } from "vue-router";
 import "~/assets/styles/style.scss";
@@ -21,4 +22,5 @@ export const createApp = ViteSSG(App, { routes, scrollBehavior }, (ctx) => {
 
   ctx.app.use(pinia);
   ctx.app.provide("$marzipano", marzipano);
+  ctx.app.provide("$anime", anime);
 });

@@ -5,9 +5,12 @@ import "@vue/runtime-core";
 
 declare module "@vue/runtime-core" {
   export interface GlobalComponents {
-    HelloWorld: typeof import("./src/components/HelloWorld.vue")["default"];
+    NavBar: typeof import("./src/components/NavBar/NavBar.vue")["default"];
+    NavTitle: typeof import("./src/components/NavBar/NavTitle.vue")["default"];
     RouterLink: typeof import("vue-router")["RouterLink"];
     RouterView: typeof import("vue-router")["RouterView"];
+    SvgBase: typeof import("./src/components/SvgBase.vue")["default"];
+    Title: typeof import("./src/components/NavBar/Title.vue")["default"];
   }
 }
 
