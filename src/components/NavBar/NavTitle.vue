@@ -1,7 +1,8 @@
 <script setup lang="ts">
-const anime = inject("$anime");
-
-onMounted(() => {
+onMounted(async () => {
+  if (typeof window === "undefined") return;
+  const ani = await import("animejs/lib/anime.es.js");
+  const anime = ani.default;
   anime({
     targets: ".navTitle path",
     strokeDashoffset: [anime.setDashoffset, 0],

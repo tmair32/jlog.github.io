@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import SolidColorSource from "~/utils/SolidColorSource";
+// import SolidColorSource from "~/utils/SolidColorSource";
 
-const marzipano = inject("$marzipano");
+// const marzipano = inject("$marzipano");
 const panoRef: HTMLDivElement | undefined = ref();
 
 // Show stats about the current view and cubemap size.
@@ -18,11 +18,16 @@ const viewerOpts = {
   },
 };
 
-onMounted(() => {
+onMounted(async () => {
+  if (typeof window === "undefined") return;
+  const marzipano = await import("marzipano");
+  const solid = await import("~/utils/SolidColorSource");
+  const SolidColorSource = solid.default;
+
   const viewer = new marzipano.Viewer(panoRef.value, viewerOpts);
 
   // Create procedurally-generated single-color tile source.
-  const source = new SolidColorSource(512, 512);
+  const source = new SolidColorSource(marzipano, 512, 512);
 
   // Create geometry with a very large number of levels.
   const levels = [];

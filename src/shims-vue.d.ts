@@ -15,3 +15,7 @@ declare module "*.md" {
 declare module "marzipano" {
   export const install: PluginFunction<{}>;
 }
+
+declare module "animejs" {
+  export const install: PluginFunction<{}>;
+}

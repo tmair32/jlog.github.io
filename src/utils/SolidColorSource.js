@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 "use strict";
-import Marzipano from "marzipano";
+// import Marzipano from "marzipano";
 // Custom tile source for procedurally generated solid color tiles.
-function SolidColorSource(width, height) {
+function SolidColorSource(marzipano, width, height) {
+  this._marzipano = marzipano;
   this._width = width;
   this._height = height;
 }
@@ -52,6 +53,7 @@ SolidColorSource.prototype._tileColor = function (tile) {
 };
 
 SolidColorSource.prototype.loadAsset = function (stage, tile, done) {
+  var marzipano = this._marzipano;
   var width = this._width;
   var height = this._height;
   var text = this._tileText(tile);
@@ -80,7 +82,7 @@ SolidColorSource.prototype.loadAsset = function (stage, tile, done) {
 
   // Pass result into callback.
   var timeout = setTimeout(function () {
-    var asset = new Marzipano.StaticAsset(element);
+    var asset = new marzipano.StaticAsset(element);
     done(null, tile, asset);
   }, 0);
 

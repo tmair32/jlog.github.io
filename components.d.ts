@@ -10,7 +10,6 @@ declare module "@vue/runtime-core" {
     RouterLink: typeof import("vue-router")["RouterLink"];
     RouterView: typeof import("vue-router")["RouterView"];
     SvgBase: typeof import("./src/components/SvgBase.vue")["default"];
-    Title: typeof import("./src/components/NavBar/Title.vue")["default"];
   }
 }
 
