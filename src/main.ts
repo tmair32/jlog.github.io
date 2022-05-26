@@ -1,5 +1,6 @@
 import { ViteSSG } from "vite-ssg";
 import App from "./App.vue";
+import axios from "axios";
 import routes from "virtual:generated-pages";
 import { createPinia } from "pinia";
 import { RouterScrollBehavior } from "vue-router";
