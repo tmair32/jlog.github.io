@@ -20,6 +20,7 @@ import toc from "markdown-it-table-of-contents";
 // https://vitejs.dev/config/
 export default defineConfig({
   mode: process.env.MODE || process.env.NODE_ENV || "development",
+  base: "/jlog.github.io/",
   server: {
     fs: {
       allow: [".."],
