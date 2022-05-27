@@ -11,7 +11,6 @@ for (let i = 0; i < 6; i++) {
 onMounted(async () => {
   for (let i = 0; i < 6; i++) {
     try {
-      await setTimeout(() => {}, 3000);
       const catData = await axios.get(
         "https://api.thecatapi.com/v1/images/search"
       );
@@ -30,8 +29,8 @@ onMounted(async () => {
   <div class="section">
     <template v-for="(_, idx) in 6" :key="`catBox-${idx}`">
       <div class="section__button">
-        <span v-if="!catImgList[idx]?.loading" class="skeleton" />
-        <img v-else :src="catImgList[idx]?.url" />
+        <Skeleton :loading="catImgList[idx]?.loading" />
+        <img v-if="catImgList[idx]?.loading" :src="catImgList[idx]?.url" />
       </div>
       <hr v-if="idx === 0" />
     </template>
@@ -49,27 +48,6 @@ onMounted(async () => {
 
     img {
       @apply w-full h-full rounded-xl;
-    }
-
-    .skeleton {
-      @apply inline-block relative align-middle overflow-hidden bg-teal-300;
-      &:after {
-        background-image: linear-gradient(
-          90deg,
-          rgba(#fff, 0) 0,
-          rgba(#fff, 0.2) 20%,
-          rgba(#fff, 0.5) 60%,
-          rgba(#fff, 0)
-        );
-        animation: shimmer 5s infinite;
-        content: "";
-        @apply absolute inset-0 transform -translate-x-[100%];
-      }
-      @keyframes shimmer {
-        100% {
-          @apply transform translate-x-[100%];
-        }
-      }
     }
   }
   hr {
