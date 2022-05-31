@@ -3,6 +3,7 @@ import App from "./App.vue";
 import axios from "axios";
 import routes from "virtual:generated-pages";
 import { createPinia } from "pinia";
+import { useRootStore } from "./store/root";
 import { RouterScrollBehavior } from "vue-router";
 import "~/assets/styles/style.scss";
 import "virtual:windi.css";
@@ -18,6 +19,5 @@ export const createApp = ViteSSG(App, { routes, scrollBehavior }, (ctx) => {
   );
 
   const pinia = createPinia();
-
   ctx.app.use(pinia);
 });

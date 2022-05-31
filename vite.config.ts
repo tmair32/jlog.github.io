@@ -9,6 +9,8 @@ import WindiCSS from "vite-plugin-windicss";
 
 import { resolve } from "path";
 import { readFileSync } from "fs";
+import Icons from "unplugin-icons/vite";
+import IconsResolver from "unplugin-icons/resolver";
 import matter from "gray-matter";
 import Pages from "vite-plugin-pages";
 
@@ -43,6 +45,7 @@ export default defineConfig({
     Components({
       extensions: ["vue", "md"],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      resolvers: [IconsResolver()],
       dts: true,
     }),
     eslintPlugin(),
@@ -72,6 +75,9 @@ export default defineConfig({
           }),
           md.use(toc);
       },
+    }),
+    Icons({
+      compiler: "vue3",
     }),
     Pages({
       pagesDir: [
