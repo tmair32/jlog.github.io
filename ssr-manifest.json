@@ -205,9 +205,7 @@
   "node_modules/.pnpm/animejs@3.2.1/node_modules/animejs/lib/anime.es.js": [
     "/jlog.github.io/assets/anime.es.5068d64c.js"
   ],
-  "\u0000commonjsHelpers.js": [
-    "/jlog.github.io/assets/index.42798b80.js"
-  ],
+  "\u0000commonjsHelpers.js": ["/jlog.github.io/assets/index.42798b80.js"],
   "node_modules/.pnpm/minimal-event-emitter@1.0.0/node_modules/minimal-event-emitter/index.js": [
     "/jlog.github.io/assets/index.42798b80.js"
   ],
