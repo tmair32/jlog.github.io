@@ -5,14 +5,12 @@ import "@vue/runtime-core";
 
 declare module "@vue/runtime-core" {
   export interface GlobalComponents {
-    Marzipano2: typeof import("./src/components/marzipano2.vue")["default"];
-    MobileMenuButton: typeof import("./src/components/Blog/Section/MobileMenuButton.vue")["default"];
+    Marzipano: typeof import("./src/components/marzipano.vue")["default"];
+    MenuButton: typeof import("./src/components/Blog/NavBar/MenuButton.vue")["default"];
     NavBar: typeof import("./src/components/Blog/NavBar/NavBar.vue")["default"];
     NavTitle: typeof import("./src/components/Blog/NavBar/NavTitle.vue")["default"];
     RouterLink: typeof import("vue-router")["RouterLink"];
     RouterView: typeof import("vue-router")["RouterView"];
-    Section: typeof import("./src/components/Blog/Section/Section.vue")["default"];
-    SectionMenu: typeof import("./src/components/Blog/Section/SectionMenu.vue")["default"];
     Skeleton: typeof import("./src/components/Skeleton.vue")["default"];
     SvgBase: typeof import("./src/components/SvgBase.vue")["default"];
   }

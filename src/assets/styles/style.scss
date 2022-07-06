@@ -12,6 +12,12 @@
   font-family: "Noto Sans KR", sans-serif;
 }
 
+body {
+  @apply md:container h-screen;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 html.dark {
   @apply bg-elucidator-900;
 }

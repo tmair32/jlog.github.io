@@ -1,6 +1,10 @@
 <script setup lang="ts">
 // import SolidColorSource from "~/utils/SolidColorSource";
 
+import { useRootStore } from "~/store/root";
+const chartStore = useRootStore();
+const { setScene, setView } = chartStore;
+
 // const marzipano = inject("$marzipano");
 const panoRef: HTMLDivElement | undefined = ref();
 
@@ -134,6 +138,9 @@ onMounted(async () => {
     totalPixelsRef.value.innerHTML = totalPixelsFormatted;
     fovRef.value.innerHTML = fovFormatted;
   });
+
+  setScene(scene);
+  setView(view);
 });
 </script>
 
@@ -141,7 +148,9 @@ onMounted(async () => {
   <div class="main">
     <div ref="panoRef" class="marzipano" />
 
-    <div class="info">
+    <slot name="marziContent" />
+
+    <div class="info hidden">
       <div>Fov: <span ref="fovRef" /></div>
       <div>Face tiles: <span ref="faceTilesRef" /></div>
       <div>Face size: <span ref="facePixelsRef" /></div>

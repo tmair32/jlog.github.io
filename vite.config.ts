@@ -27,7 +27,7 @@ export default defineConfig({
     fs: {
       allow: [".."],
     },
-    port: 5001,
+    port: 5002,
   },
   resolve: {
     alias: {

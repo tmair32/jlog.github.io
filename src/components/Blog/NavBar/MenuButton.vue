@@ -9,7 +9,7 @@ const { mobileMenu: isMobileMenuOpen } = storeToRefs(chartStore);
 <template>
   <div class="menu-box">
     <button
-      class="w-10 h-10 relative focus:outline-none"
+      class="w-5 h-5 relative focus:outline-none"
       @click="toggleMobileMenu"
     >
       <span class="sr-only">Open Section Menu</span>
@@ -43,6 +43,6 @@ const { mobileMenu: isMobileMenuOpen } = storeToRefs(chartStore);
 </template>
 <style lang="scss" scoped>
 .menu-box {
-  @apply block w-5 sm:hidden;
+  @apply block w-5;
 }
 </style>

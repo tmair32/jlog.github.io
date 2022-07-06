@@ -1,9 +1,5 @@
 <script setup lang="ts"></script>
 <template>
-  <div></div>
+  <div class="layout"></div>
 </template>
-<style lang="scss" scoped>
-.layout {
-  @apply w-screen h-screen bg-white;
-}
-</style>
+<style lang="scss" scoped></style>
