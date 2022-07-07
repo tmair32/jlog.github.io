@@ -13,9 +13,7 @@
 }
 
 body {
-  @apply md:container h-screen;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  @apply w-screen h-screen;
 }
 
 html.dark {

@@ -20,6 +20,7 @@
     "vue-router": "^4.0.15"
   },
   "devDependencies": {
+    "@babylonjs/core": "^5.13.2",
     "@iconify-json/mdi": "^1.1.19",
     "@types/animejs": "^3.1.4",
     "@types/markdown-it": "^12.2.3",

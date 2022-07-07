@@ -5,6 +5,8 @@ import "@vue/runtime-core";
 
 declare module "@vue/runtime-core" {
   export interface GlobalComponents {
+    Background: typeof import("./src/components/Blog/Background.vue")["default"];
+    Banner: typeof import("./src/components/Blog/Banner.vue")["default"];
     Marzipano: typeof import("./src/components/marzipano.vue")["default"];
     MenuButton: typeof import("./src/components/Blog/NavBar/MenuButton.vue")["default"];
     NavBar: typeof import("./src/components/Blog/NavBar/NavBar.vue")["default"];
