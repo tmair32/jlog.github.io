@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@babylonjs/core": "^5.13.2",
+    "@babylonjs/loaders": "^5.13.3",
     "@iconify-json/mdi": "^1.1.19",
     "@types/animejs": "^3.1.4",
     "@types/markdown-it": "^12.2.3",
@@ -30,6 +31,7 @@
     "@vitejs/plugin-vue": "^2.3.3",
     "@vue/eslint-config-typescript": "^10.0.0",
     "animejs": "^3.2.1",
+    "babylonjs-gltf2interface": "^5.0.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",

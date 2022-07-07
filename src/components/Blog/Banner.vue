@@ -5,10 +5,12 @@ import {
   HemisphericLight,
   MeshBuilder,
   Scene,
+  SceneLoader,
   StandardMaterial,
   Texture,
   Vector3,
 } from "@babylonjs/core";
+import "@babylonjs/loaders";
 const canvasRef: HTMLCanvasElement = ref(null);
 
 onMounted(() => {
@@ -24,9 +26,21 @@ onMounted(() => {
     scene.render();
   });
 
+  const Emolga = SceneLoader.ImportMesh(
+    "",
+    "/src/assets/image/emolga/",
+    "scene.gltf",
+    scene,
+    (meshes, particleSystems, skeletons) => {
+      for (let mesh of meshes) {
+        mesh.position = new Vector3(0, -0.5, 0);
+      }
+    }
+  );
+
   const Camera = new ArcRotateCamera(
     "camera",
-    -Math.PI / 2,
+    Math.PI / 2,
     Math.PI / 4,
     3,
     new Vector3(0, 0, 0),
@@ -37,20 +51,20 @@ onMounted(() => {
   const light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
   light.intensity = 0.5;
 
-  const earth = MeshBuilder.CreateSphere("earth", {}, scene);
-  const earthMaterial = new StandardMaterial("ground", scene);
-  earthMaterial.diffuseTexture = new Texture("textures/earth.jpg", scene);
-  earthMaterial.diffuseTexture.vScale = -1;
-  earth.material = earthMaterial;
+  // const earth = MeshBuilder.CreateSphere("earth", {}, scene);
+  // const earthMaterial = new StandardMaterial("ground", scene);
+  // earthMaterial.diffuseTexture = new Texture("textures/earth.jpg", scene);
+  // earthMaterial.diffuseTexture.vScale = -1;
+  // earth.material = earthMaterial;
 
-  scene.registerBeforeRender(() => {
-    const axis = new Vector3(
-      Math.sin((23 * Math.PI) / 180),
-      Math.cos((23 * Math.PI) / 180),
-      0
-    );
-    earth.rotate(axis, 0.01);
-  });
+  // scene.registerBeforeRender(() => {
+  //   const axis = new Vector3(
+  //     Math.sin((23 * Math.PI) / 180),
+  //     Math.cos((23 * Math.PI) / 180),
+  //     0
+  //   );
+  //   earth.rotate(axis, 0.01);
+  // });
 });
 </script>
 <template>
